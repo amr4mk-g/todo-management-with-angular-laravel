@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="left">
+       <h1 class="title">Todo Management</h1>
+       <p class="desc">
+        A todo management application is a software product made to assist users in efficiently 
+        and methodically tracking and organizing their tasks, obligations, and objectives. 
+        The purpose of the software is to improve time management and productivity by giving users 
+        a single place to make, organize, and prioritize their to-do lists.
+        </p>
+    </div>
+
+    <div class="right">
+        <nav class="options">
+            <button class="btn btn-primary" routerLink="login" routerLinkActive="active">Login</button>
+            <button class="btn btn-primary" routerLink="signup" routerLinkActive="active">Signup</button>
+        </nav>
+
+        <div class="add">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

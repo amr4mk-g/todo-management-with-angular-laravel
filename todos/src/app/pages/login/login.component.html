@@ -1,0 +1,18 @@
+<div class="container">
+    <h5 class="text">Login Here</h5>
+    <form action="" (ngSubmit)="onSubmit()" [formGroup]="loginForm" autocomplete="off" novalidate>
+        <div action="form-group">
+            <label for="">Email Address</label>
+            <input type="text" placeholder="Email Address" class="form-control" formControlName="email">
+            <span *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="form-error">Email address is required</span>
+        </div>
+
+        <div action="form-group">
+            <label for="">Password</label>
+            <input type="password" placeholder="Password" class="form-control" formControlName="password">
+            <span *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="form-error">Password is required</span>
+        </div>
+        
+        <button [disabled]='loginForm.invalid' class="btn btn-rounded btn-primary">Submit</button>
+    </form>
+</div>

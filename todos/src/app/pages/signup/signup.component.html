@@ -1,0 +1,24 @@
+<div class="container">
+    <h5 class="text">SignUp Here</h5>
+    <form action="" (ngSubmit)="onSubmit()" [formGroup]="signupForm" autocomplete="off" novalidate>
+        <div action="form-group">
+            <label for="">Name</label>
+            <input type="text" placeholder="User Name" class="form-control" formControlName="username">
+            <span *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.invalid" class="form-error">Username is required</span>
+        </div>
+
+        <div action="form-group">
+            <label for="">Email Address</label>
+            <input type="text" placeholder="Email Address" class="form-control" formControlName="email">
+            <span *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid" class="form-error">Email address is required</span>
+        </div>
+
+        <div action="form-group">
+            <label for="">Password</label>
+            <input type="password" placeholder="Password" class="form-control" formControlName="password">
+            <span *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid" class="form-error">Password is required</span>
+        </div>
+        
+        <button [disabled]='signupForm.invalid' class="btn btn-rounded btn-primary">Submit</button>
+    </form>
+</div>

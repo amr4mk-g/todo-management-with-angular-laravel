@@ -1,0 +1,13 @@
+<div *ngIf="isOpen">
+    <div class="m1">
+        <div class="m2">
+            <div class="m3">
+                <h4 class="text">{{headerText}}</h4>
+                <i class="close btn-close" (click)="onClosePanel()"></i>
+            </div>
+            <div class="m4">
+                <ng-content></ng-content>
+            </div>
+        </div>
+    </div>
+</div>

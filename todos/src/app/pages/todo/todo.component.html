@@ -1,0 +1,58 @@
+<div class="container">
+    <button class="btn rounded-pill btn-primary email" (click)="sendListToMail()">Send all todo list to my email</button>
+
+    <div class="main">
+        <h2 class="title">Manage Todo List</h2>
+        <button class="btn rounded-pill btn-primary" (click)="openAddTodo()">+ Add New Todo</button>
+    </div>
+
+    <div class="filter">
+        <button class="btn button" [class]="{'btn-primary': filterStatus == ''}"
+            (click)="onFilterByStatus('')">ALL</button>
+        <button class="btn button" [class]="{'btn-primary': filterStatus == 'OPEN'}"
+            (click)="onFilterByStatus('OPEN')">OPEN</button>
+        <button class="btn button" [class]="{'btn-primary': filterStatus == 'PROGRESS'}"
+            (click)="onFilterByStatus('PROGRESS')">PROGRESS</button>
+        <button class="btn button" [class]="{'btn-primary': filterStatus == 'TESTING'}"
+            (click)="onFilterByStatus('TESTING')">TESTING</button>
+        <button class="btn button" [class]="{'btn-primary': filterStatus == 'DONE'}"
+            (click)="onFilterByStatus('DONE')">DONE</button>
+    </div>
+
+    <div class="back">
+        <div *ngFor="let item of filteredTodos">
+            <app-todo-card [type]="item.status" [todo]="item" (click)="onLoadTodo(item)"></app-todo-card>
+        </div>
+    </div>
+</div>
+
+<app-panel [headerText]="'Todo Details'" [isOpen]="isPanelOpen" (onClose)="onClosePanel()">
+    <form (ngSubmit)="onSubmit()" [formGroup]="todoForm" autocomplete="off" novalidate>
+        <div class="form-group">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" id="title" class="form-control" placeholder="Title" formControlName="title">
+            <span *ngIf="todoForm.get('title')?.touched && todoForm.get('title')?.invalid" class="form-error">Title is required</span>
+        </div>
+
+        <div class="form-group">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="" rows="6" class="form-control" placeholder="Description" formControlName="description"></textarea>
+            <span *ngIf="todoForm.get('description')?.touched && todoForm.get('description')?.invalid" class="form-error">Description is required</span>
+        </div>
+
+        <div class="form-group">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-select" formControlName="status">
+                <option *ngFor="let item of todoStatus" [value]="item">{{item}}</option>
+            </select>
+            <span *ngIf="todoForm.get('status')?.touched && todoForm.get('status')?.invalid" class="form-error">Status is required</span>
+        </div>
+
+        <div class="options">
+            <button [disabled]='todoForm.invalid' type="submit" class="btn btn-rounded btn-success">Submit</button>
+            <button type="button" class="btn btn-rounded btn-secondary" (click)="onClosePanel()">Cancel</button>
+        </div>
+
+        <button type="button" [disabled]='todoForm.invalid' class="delete btn btn-rounded btn-danger" (click)="deleteTodo()">Delete</button>
+    </form>
+</app-panel>

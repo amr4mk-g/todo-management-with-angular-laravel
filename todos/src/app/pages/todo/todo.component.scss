@@ -1,0 +1,95 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.back {
+    margin-top: 0.75rem;
+    background-color: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.form-error {
+    color: #ef4444; 
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem; 
+    font-weight: 500; 
+    line-height: 1.5;
+    color: #111827;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    outline: none;
+    border: 2px solid #e5e7eb; 
+    border-radius: 0.375rem; 
+}
+
+.form-control:focus {
+    border-color: #2563eb; 
+}
+
+.form-control.invalid {
+    border-color: #ef4444;
+}
+
+.form-control.valid {
+    border-color: #22c55e;
+}
+
+.form-select {
+    width: 100%;
+    padding: 0.5rem 0.75rem; 
+    outline: none;
+    border: 2px solid #e5e7eb; 
+    border-radius: 0.375rem; 
+}
+
+.options {
+    display: flex;
+    gap: 0.5rem; 
+    margin-bottom: 20px;
+}
+
+.filter {
+    margin-top: 1rem;
+    display: inline-flex;
+    gap: 0.5rem;
+}
+
+.button {
+    border: 1px solid #007bff;
+    font-size: 0.75rem; 
+}
+
+.delete {
+    width: 40%;
+}
+
+.email {
+    margin-bottom: 15px;
+    width: 25%;
+}

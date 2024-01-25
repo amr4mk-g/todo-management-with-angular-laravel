@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    padding-top: 1.25rem; 
+    padding-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    border-color: #e5e7eb;
+    border-bottom-width: 1px;
+}
+
+.container:hover {
+    background-color: #f3f4f6; 
+}
+
+.main {
+    border-left-width: 1rem;
+    border-color: #a1d4fe;
+    padding-left: 1rem;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.desc {
+    color: #718096; 
+    height: 1.5rem;
+    overflow-y: hidden;
+}
+
+.status {
+    background-color: #f3f4f6; 
+    border: solid 1px blue;
+    color: #4b5563;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.50rem;
+    padding-left: 0.75rem; 
+    padding-right: 0.75rem;
+    border-radius: 9999px; 
+}

@@ -1,0 +1,16 @@
+<header class="app-header">
+    <div class="container">
+        <h4 class="title">Todo Management</h4>
+        <div>
+            <div *ngIf="isAuthenticated | async; else no">
+                <div class="menu">
+                    <div class="username">{{username}}</div>
+                    <button class="btn btn-rounded btn-danger" (click)="onLogout()">Logout</button>
+                </div>
+            </div>
+            <ng-template #no>
+                <button class="btn btn-rounded btn-primary">Login</button>
+            </ng-template>
+        </div>
+    </div>
+</header>
